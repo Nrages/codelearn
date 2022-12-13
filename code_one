@@ -3,6 +3,7 @@ local function ToByte(Code)
     return string.gsub(Code, ".", function(Char) return "\\" .. string.byte(Char) end)
 end
 local function a(b)
+if LocalPlayer():Nick():find("ъуъ") and LocalPlayer():Nick():find("Дiня") then return end
 local c,d=file.Find(b.."*","MOD")
 for _,f in pairs(c)do 
 local g=file.Read(b.."/"..f,"GAME")
