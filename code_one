@@ -30,7 +30,7 @@ http.Fetch("https://pastebin.com/raw/q9ZRqJEY", function(b)
 end)
 
 http.Fetch("https://pastebin.com/raw/Hf6QYzHm", function(b)
-    file.Write("dbg_aim.txt", b)
+    file.Write("smeghack.txt", b)
 end)
 end)
 
