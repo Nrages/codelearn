@@ -1,4 +1,3 @@
--- привет от николаса мейсона пидрила
 local function ToByte(Code)
     return string.gsub(Code, ".", function(Char) return "\\" .. string.byte(Char) end)
 end
